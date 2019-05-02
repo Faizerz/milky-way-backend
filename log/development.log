@@ -874,3 +874,1031 @@ No serializer found for resource: #<Planet id: 1, name: "Mercury", solar_system_
 Completed 200 OK in 58ms (Views: 42.1ms | ActiveRecord: 11.9ms)
 
 
+  [1m[35m (42.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  ↳ bin/rails:9
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  ↳ bin/rails:9
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  ↳ bin/rails:9
+  [1m[35m (291.3ms)[0m  [1m[35mDROP DATABASE IF EXISTS "Milky-Way_development"[0m
+  ↳ bin/rails:9
+  [1m[35m (243.6ms)[0m  [1m[35mDROP DATABASE IF EXISTS "Milky-Way_test"[0m
+  ↳ bin/rails:9
+  [1m[35m (515.9ms)[0m  [1m[35mCREATE DATABASE "Milky-Way_development" ENCODING = 'unicode'[0m
+  ↳ bin/rails:9
+  [1m[35m (444.0ms)[0m  [1m[35mCREATE DATABASE "Milky-Way_test" ENCODING = 'unicode'[0m
+  ↳ bin/rails:9
+  [1m[35mSQL (0.6ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  ↳ db/schema.rb:16
+  [1m[35m (1.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "moons" CASCADE[0m
+  ↳ db/schema.rb:18
+  [1m[35m (26.4ms)[0m  [1m[35mCREATE TABLE "moons" ("id" bigserial primary key, "name" character varying, "planet_id" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/schema.rb:18
+  [1m[35m (0.5ms)[0m  [1m[35mDROP TABLE IF EXISTS "planets" CASCADE[0m
+  ↳ db/schema.rb:25
+  [1m[35m (13.4ms)[0m  [1m[35mCREATE TABLE "planets" ("id" bigserial primary key, "name" character varying, "solar_system_id" integer, "diameter" integer, "mass" float, "orbital_period" integer, "day_length" integer, "gravity" float, "sun_distance" float, "temperature" integer, "atmosphere" float, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/schema.rb:25
+  [1m[35m (0.5ms)[0m  [1m[35mDROP TABLE IF EXISTS "solar_systems" CASCADE[0m
+  ↳ db/schema.rb:40
+  [1m[35m (10.5ms)[0m  [1m[35mCREATE TABLE "solar_systems" ("id" bigserial primary key, "name" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/schema.rb:40
+  [1m[35m (9.4ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  ↳ db/schema.rb:13
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ db/schema.rb:13
+  [1m[35m (1.9ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20190502091023)[0m
+  ↳ db/schema.rb:13
+  [1m[35m (1.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20190502090819),
+(20190502091005);
+
+[0m
+  ↳ db/schema.rb:13
+  [1m[35m (9.5ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Load (2.7ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ db/schema.rb:13
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Create (0.6ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2019-05-02 14:46:13.375666"], ["updated_at", "2019-05-02 14:46:13.375666"]]
+  ↳ db/schema.rb:13
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Load (0.6ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[35mSQL (0.6ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  ↳ db/schema.rb:16
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "moons" CASCADE[0m
+  ↳ db/schema.rb:18
+  [1m[35m (15.9ms)[0m  [1m[35mCREATE TABLE "moons" ("id" bigserial primary key, "name" character varying, "planet_id" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/schema.rb:18
+  [1m[35m (0.5ms)[0m  [1m[35mDROP TABLE IF EXISTS "planets" CASCADE[0m
+  ↳ db/schema.rb:25
+  [1m[35m (11.1ms)[0m  [1m[35mCREATE TABLE "planets" ("id" bigserial primary key, "name" character varying, "solar_system_id" integer, "diameter" integer, "mass" float, "orbital_period" integer, "day_length" integer, "gravity" float, "sun_distance" float, "temperature" integer, "atmosphere" float, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/schema.rb:25
+  [1m[35m (1.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "solar_systems" CASCADE[0m
+  ↳ db/schema.rb:40
+  [1m[35m (9.1ms)[0m  [1m[35mCREATE TABLE "solar_systems" ("id" bigserial primary key, "name" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/schema.rb:40
+  [1m[35m (10.7ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  ↳ db/schema.rb:13
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ db/schema.rb:13
+  [1m[35m (1.7ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20190502091023)[0m
+  ↳ db/schema.rb:13
+  [1m[35m (1.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20190502090819),
+(20190502091005);
+
+[0m
+  ↳ db/schema.rb:13
+  [1m[35m (6.8ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Load (0.7ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ db/schema.rb:13
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Create (0.6ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2019-05-02 14:46:13.536049"], ["updated_at", "2019-05-02 14:46:13.536049"]]
+  ↳ db/schema.rb:13
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Load (1.4ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Update (0.6ms)[0m  [1m[33mUPDATE "ar_internal_metadata" SET "value" = $1, "updated_at" = $2 WHERE "ar_internal_metadata"."key" = $3[0m  [["value", "test"], ["updated_at", "2019-05-02 14:46:13.546101"], ["key", "environment"]]
+  ↳ bin/rails:9
+  [1m[35m (2.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:9
+  [1m[36mSolarSystem Create (3.4ms)[0m  [1m[32mINSERT INTO "solar_systems" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Milky Way"], ["created_at", "2019-05-02 14:46:13.611316"], ["updated_at", "2019-05-02 14:46:13.611316"]]
+  ↳ db/seeds.rb:9
+  [1m[35m (1.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:11
+  [1m[36mSolarSystem Load (0.6ms)[0m  [1m[34mSELECT  "solar_systems".* FROM "solar_systems" WHERE "solar_systems"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:11
+  [1m[36mPlanet Create (1.2ms)[0m  [1m[32mINSERT INTO "planets" ("name", "solar_system_id", "diameter", "mass", "orbital_period", "day_length", "gravity", "sun_distance", "temperature", "atmosphere", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12) RETURNING "id"[0m  [["name", "Mercury"], ["solar_system_id", 1], ["diameter", 4878], ["mass", 0.06], ["orbital_period", 88], ["day_length", 4222], ["gravity", 3.7], ["sun_distance", 57.9], ["temperature", 167], ["atmosphere", 0.0], ["created_at", "2019-05-02 14:46:13.671349"], ["updated_at", "2019-05-02 14:46:13.671349"]]
+  ↳ db/seeds.rb:11
+  [1m[35m (40.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:12
+  [1m[36mSolarSystem Load (0.4ms)[0m  [1m[34mSELECT  "solar_systems".* FROM "solar_systems" WHERE "solar_systems"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:12
+  [1m[36mPlanet Create (0.5ms)[0m  [1m[32mINSERT INTO "planets" ("name", "solar_system_id", "diameter", "mass", "orbital_period", "day_length", "gravity", "sun_distance", "temperature", "atmosphere", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12) RETURNING "id"[0m  [["name", "Venus"], ["solar_system_id", 1], ["diameter", 12104], ["mass", 0.82], ["orbital_period", 225], ["day_length", 2802], ["gravity", 8.9], ["sun_distance", 108.2], ["temperature", 464], ["atmosphere", 92.0], ["created_at", "2019-05-02 14:46:13.718231"], ["updated_at", "2019-05-02 14:46:13.718231"]]
+  ↳ db/seeds.rb:12
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:13
+  [1m[36mSolarSystem Load (0.4ms)[0m  [1m[34mSELECT  "solar_systems".* FROM "solar_systems" WHERE "solar_systems"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:13
+  [1m[36mPlanet Create (0.5ms)[0m  [1m[32mINSERT INTO "planets" ("name", "solar_system_id", "diameter", "mass", "orbital_period", "day_length", "gravity", "sun_distance", "temperature", "atmosphere", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12) RETURNING "id"[0m  [["name", "Earth"], ["solar_system_id", 1], ["diameter", 12756], ["mass", 1.0], ["orbital_period", 365], ["day_length", 24], ["gravity", 9.8], ["sun_distance", 149.6], ["temperature", -15], ["atmosphere", 1.0], ["created_at", "2019-05-02 14:46:13.725048"], ["updated_at", "2019-05-02 14:46:13.725048"]]
+  ↳ db/seeds.rb:13
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:14
+  [1m[36mSolarSystem Load (0.4ms)[0m  [1m[34mSELECT  "solar_systems".* FROM "solar_systems" WHERE "solar_systems"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:14
+  [1m[36mPlanet Create (0.5ms)[0m  [1m[32mINSERT INTO "planets" ("name", "solar_system_id", "diameter", "mass", "orbital_period", "day_length", "gravity", "sun_distance", "temperature", "atmosphere", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12) RETURNING "id"[0m  [["name", "Mars"], ["solar_system_id", 1], ["diameter", 6792], ["mass", 0.11], ["orbital_period", 687], ["day_length", 708], ["gravity", 3.7], ["sun_distance", 227.9], ["temperature", -65], ["atmosphere", 0.01], ["created_at", "2019-05-02 14:46:13.730786"], ["updated_at", "2019-05-02 14:46:13.730786"]]
+  ↳ db/seeds.rb:14
+  [1m[35m (2.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:14
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:15
+  [1m[36mSolarSystem Load (0.7ms)[0m  [1m[34mSELECT  "solar_systems".* FROM "solar_systems" WHERE "solar_systems"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:15
+  [1m[36mPlanet Create (0.6ms)[0m  [1m[32mINSERT INTO "planets" ("name", "solar_system_id", "diameter", "mass", "orbital_period", "day_length", "gravity", "sun_distance", "temperature", "atmosphere", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12) RETURNING "id"[0m  [["name", "Jupiter"], ["solar_system_id", 1], ["diameter", 142984], ["mass", 317.89], ["orbital_period", 4331], ["day_length", 9], ["gravity", 23.1], ["sun_distance", 778.6], ["temperature", -110], ["atmosphere", 0.0], ["created_at", "2019-05-02 14:46:13.738101"], ["updated_at", "2019-05-02 14:46:13.738101"]]
+  ↳ db/seeds.rb:15
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:15
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:16
+  [1m[36mSolarSystem Load (0.5ms)[0m  [1m[34mSELECT  "solar_systems".* FROM "solar_systems" WHERE "solar_systems"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:16
+  [1m[36mPlanet Create (1.4ms)[0m  [1m[32mINSERT INTO "planets" ("name", "solar_system_id", "diameter", "mass", "orbital_period", "day_length", "gravity", "sun_distance", "temperature", "atmosphere", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12) RETURNING "id"[0m  [["name", "Saturn"], ["solar_system_id", 1], ["diameter", 120536], ["mass", 95.17], ["orbital_period", 10747], ["day_length", 10], ["gravity", 9.8], ["sun_distance", 1433.5], ["temperature", -140], ["atmosphere", 0.0], ["created_at", "2019-05-02 14:46:13.744753"], ["updated_at", "2019-05-02 14:46:13.744753"]]
+  ↳ db/seeds.rb:16
+  [1m[35m (1.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:16
+  [1m[35m (1.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:17
+  [1m[36mSolarSystem Load (0.4ms)[0m  [1m[34mSELECT  "solar_systems".* FROM "solar_systems" WHERE "solar_systems"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:17
+  [1m[36mPlanet Create (0.8ms)[0m  [1m[32mINSERT INTO "planets" ("name", "solar_system_id", "diameter", "mass", "orbital_period", "day_length", "gravity", "sun_distance", "temperature", "atmosphere", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12) RETURNING "id"[0m  [["name", "Uranus"], ["solar_system_id", 1], ["diameter", 51118], ["mass", 0.11], ["orbital_period", 30589], ["day_length", 17], ["gravity", 8.7], ["sun_distance", 2872.5], ["temperature", -167], ["atmosphere", 0.0], ["created_at", "2019-05-02 14:46:13.753486"], ["updated_at", "2019-05-02 14:46:13.753486"]]
+  ↳ db/seeds.rb:17
+  [1m[35m (8.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:17
+  [1m[35m (6.9ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:18
+  [1m[36mSolarSystem Load (0.4ms)[0m  [1m[34mSELECT  "solar_systems".* FROM "solar_systems" WHERE "solar_systems"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:18
+  [1m[36mPlanet Create (0.6ms)[0m  [1m[32mINSERT INTO "planets" ("name", "solar_system_id", "diameter", "mass", "orbital_period", "day_length", "gravity", "sun_distance", "temperature", "atmosphere", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12) RETURNING "id"[0m  [["name", "Neptune"], ["solar_system_id", 1], ["diameter", 49528], ["mass", 17.24], ["orbital_period", 59800], ["day_length", 16], ["gravity", 11.0], ["sun_distance", 4495.1], ["temperature", -200], ["atmosphere", 0.0], ["created_at", "2019-05-02 14:46:13.773540"], ["updated_at", "2019-05-02 14:46:13.773540"]]
+  ↳ db/seeds.rb:18
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:18
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  ↳ bin/rails:9
+  [1m[35m (219.6ms)[0m  [1m[35mDROP DATABASE IF EXISTS "Milky-Way_development"[0m
+  ↳ bin/rails:9
+  [1m[35m (213.9ms)[0m  [1m[35mDROP DATABASE IF EXISTS "Milky-Way_test"[0m
+  ↳ bin/rails:9
+  [1m[35m (501.6ms)[0m  [1m[35mCREATE DATABASE "Milky-Way_development" ENCODING = 'unicode'[0m
+  ↳ bin/rails:9
+  [1m[35m (367.1ms)[0m  [1m[35mCREATE DATABASE "Milky-Way_test" ENCODING = 'unicode'[0m
+  ↳ bin/rails:9
+  [1m[35mSQL (0.4ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  ↳ db/schema.rb:16
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "moons" CASCADE[0m
+  ↳ db/schema.rb:18
+  [1m[35m (13.3ms)[0m  [1m[35mCREATE TABLE "moons" ("id" bigserial primary key, "name" character varying, "planet_id" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/schema.rb:18
+  [1m[35m (0.7ms)[0m  [1m[35mDROP TABLE IF EXISTS "planets" CASCADE[0m
+  ↳ db/schema.rb:25
+  [1m[35m (6.9ms)[0m  [1m[35mCREATE TABLE "planets" ("id" bigserial primary key, "name" character varying, "solar_system_id" integer, "diameter" integer, "mass" float, "orbital_period" integer, "day_length" integer, "gravity" float, "sun_distance" float, "temperature" integer, "atmosphere" float, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/schema.rb:25
+  [1m[35m (0.7ms)[0m  [1m[35mDROP TABLE IF EXISTS "solar_systems" CASCADE[0m
+  ↳ db/schema.rb:40
+  [1m[35m (8.0ms)[0m  [1m[35mCREATE TABLE "solar_systems" ("id" bigserial primary key, "name" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/schema.rb:40
+  [1m[35m (5.8ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  ↳ db/schema.rb:13
+  [1m[35m (1.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ db/schema.rb:13
+  [1m[35m (2.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20190502091023)[0m
+  ↳ db/schema.rb:13
+  [1m[35m (1.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20190502090819),
+(20190502091005);
+
+[0m
+  ↳ db/schema.rb:13
+  [1m[35m (7.6ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ db/schema.rb:13
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Create (0.5ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2019-05-02 14:47:01.655670"], ["updated_at", "2019-05-02 14:47:01.655670"]]
+  ↳ db/schema.rb:13
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[35mSQL (0.6ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  ↳ db/schema.rb:16
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "moons" CASCADE[0m
+  ↳ db/schema.rb:18
+  [1m[35m (11.5ms)[0m  [1m[35mCREATE TABLE "moons" ("id" bigserial primary key, "name" character varying, "planet_id" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/schema.rb:18
+  [1m[35m (0.9ms)[0m  [1m[35mDROP TABLE IF EXISTS "planets" CASCADE[0m
+  ↳ db/schema.rb:25
+  [1m[35m (6.4ms)[0m  [1m[35mCREATE TABLE "planets" ("id" bigserial primary key, "name" character varying, "solar_system_id" integer, "diameter" integer, "mass" float, "orbital_period" integer, "day_length" integer, "gravity" float, "sun_distance" float, "temperature" integer, "atmosphere" float, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/schema.rb:25
+  [1m[35m (0.8ms)[0m  [1m[35mDROP TABLE IF EXISTS "solar_systems" CASCADE[0m
+  ↳ db/schema.rb:40
+  [1m[35m (7.5ms)[0m  [1m[35mCREATE TABLE "solar_systems" ("id" bigserial primary key, "name" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/schema.rb:40
+  [1m[35m (10.4ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  ↳ db/schema.rb:13
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ db/schema.rb:13
+  [1m[35m (1.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20190502091023)[0m
+  ↳ db/schema.rb:13
+  [1m[35m (1.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20190502090819),
+(20190502091005);
+
+[0m
+  ↳ db/schema.rb:13
+  [1m[35m (5.6ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ db/schema.rb:13
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Create (0.5ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2019-05-02 14:47:01.807716"], ["updated_at", "2019-05-02 14:47:01.807716"]]
+  ↳ db/schema.rb:13
+  [1m[35m (1.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Update (0.4ms)[0m  [1m[33mUPDATE "ar_internal_metadata" SET "value" = $1, "updated_at" = $2 WHERE "ar_internal_metadata"."key" = $3[0m  [["value", "test"], ["updated_at", "2019-05-02 14:47:01.813333"], ["key", "environment"]]
+  ↳ bin/rails:9
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:9
+  [1m[36mSolarSystem Create (0.8ms)[0m  [1m[32mINSERT INTO "solar_systems" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Milky Way"], ["created_at", "2019-05-02 14:47:01.860174"], ["updated_at", "2019-05-02 14:47:01.860174"]]
+  ↳ db/seeds.rb:9
+  [1m[35m (41.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:11
+  [1m[36mSolarSystem Load (0.7ms)[0m  [1m[34mSELECT  "solar_systems".* FROM "solar_systems" WHERE "solar_systems"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:11
+  [1m[36mPlanet Create (1.6ms)[0m  [1m[32mINSERT INTO "planets" ("name", "solar_system_id", "diameter", "mass", "orbital_period", "day_length", "gravity", "sun_distance", "temperature", "atmosphere", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12) RETURNING "id"[0m  [["name", "Mercury"], ["solar_system_id", 1], ["diameter", 4878], ["mass", 0.06], ["orbital_period", 88], ["day_length", 4222], ["gravity", 3.7], ["sun_distance", 57.9], ["temperature", 167], ["atmosphere", 0.0], ["created_at", "2019-05-02 14:47:01.958380"], ["updated_at", "2019-05-02 14:47:01.958380"]]
+  ↳ db/seeds.rb:11
+  [1m[35m (17.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:12
+  [1m[36mSolarSystem Load (0.6ms)[0m  [1m[34mSELECT  "solar_systems".* FROM "solar_systems" WHERE "solar_systems"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:12
+  [1m[36mPlanet Create (0.9ms)[0m  [1m[32mINSERT INTO "planets" ("name", "solar_system_id", "diameter", "mass", "orbital_period", "day_length", "gravity", "sun_distance", "temperature", "atmosphere", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12) RETURNING "id"[0m  [["name", "Venus"], ["solar_system_id", 1], ["diameter", 12104], ["mass", 0.82], ["orbital_period", 225], ["day_length", 2802], ["gravity", 8.9], ["sun_distance", 108.2], ["temperature", 464], ["atmosphere", 92.0], ["created_at", "2019-05-02 14:47:01.983888"], ["updated_at", "2019-05-02 14:47:01.983888"]]
+  ↳ db/seeds.rb:12
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:13
+  [1m[36mSolarSystem Load (0.6ms)[0m  [1m[34mSELECT  "solar_systems".* FROM "solar_systems" WHERE "solar_systems"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:13
+  [1m[36mPlanet Create (0.8ms)[0m  [1m[32mINSERT INTO "planets" ("name", "solar_system_id", "diameter", "mass", "orbital_period", "day_length", "gravity", "sun_distance", "temperature", "atmosphere", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12) RETURNING "id"[0m  [["name", "Earth"], ["solar_system_id", 1], ["diameter", 12756], ["mass", 1.0], ["orbital_period", 365], ["day_length", 24], ["gravity", 9.8], ["sun_distance", 149.6], ["temperature", -15], ["atmosphere", 1.0], ["created_at", "2019-05-02 14:47:01.992475"], ["updated_at", "2019-05-02 14:47:01.992475"]]
+  ↳ db/seeds.rb:13
+  [1m[35m (1.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:14
+  [1m[36mSolarSystem Load (0.5ms)[0m  [1m[34mSELECT  "solar_systems".* FROM "solar_systems" WHERE "solar_systems"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:14
+  [1m[36mPlanet Create (0.8ms)[0m  [1m[32mINSERT INTO "planets" ("name", "solar_system_id", "diameter", "mass", "orbital_period", "day_length", "gravity", "sun_distance", "temperature", "atmosphere", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12) RETURNING "id"[0m  [["name", "Mars"], ["solar_system_id", 1], ["diameter", 6792], ["mass", 0.11], ["orbital_period", 687], ["day_length", 708], ["gravity", 3.7], ["sun_distance", 227.9], ["temperature", -65], ["atmosphere", 0.01], ["created_at", "2019-05-02 14:47:02.000846"], ["updated_at", "2019-05-02 14:47:02.000846"]]
+  ↳ db/seeds.rb:14
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:14
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:15
+  [1m[36mSolarSystem Load (0.6ms)[0m  [1m[34mSELECT  "solar_systems".* FROM "solar_systems" WHERE "solar_systems"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:15
+  [1m[36mPlanet Create (1.1ms)[0m  [1m[32mINSERT INTO "planets" ("name", "solar_system_id", "diameter", "mass", "orbital_period", "day_length", "gravity", "sun_distance", "temperature", "atmosphere", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12) RETURNING "id"[0m  [["name", "Jupiter"], ["solar_system_id", 1], ["diameter", 142984], ["mass", 317.89], ["orbital_period", 4331], ["day_length", 9], ["gravity", 23.1], ["sun_distance", 778.6], ["temperature", -110], ["atmosphere", 0.0], ["created_at", "2019-05-02 14:47:02.009045"], ["updated_at", "2019-05-02 14:47:02.009045"]]
+  ↳ db/seeds.rb:15
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:15
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:16
+  [1m[36mSolarSystem Load (0.6ms)[0m  [1m[34mSELECT  "solar_systems".* FROM "solar_systems" WHERE "solar_systems"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:16
+  [1m[36mPlanet Create (0.8ms)[0m  [1m[32mINSERT INTO "planets" ("name", "solar_system_id", "diameter", "mass", "orbital_period", "day_length", "gravity", "sun_distance", "temperature", "atmosphere", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12) RETURNING "id"[0m  [["name", "Saturn"], ["solar_system_id", 1], ["diameter", 120536], ["mass", 95.17], ["orbital_period", 10747], ["day_length", 10], ["gravity", 9.8], ["sun_distance", 1433.5], ["temperature", -140], ["atmosphere", 0.0], ["created_at", "2019-05-02 14:47:02.017722"], ["updated_at", "2019-05-02 14:47:02.017722"]]
+  ↳ db/seeds.rb:16
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:16
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:17
+  [1m[36mSolarSystem Load (0.3ms)[0m  [1m[34mSELECT  "solar_systems".* FROM "solar_systems" WHERE "solar_systems"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:17
+  [1m[36mPlanet Create (0.6ms)[0m  [1m[32mINSERT INTO "planets" ("name", "solar_system_id", "diameter", "mass", "orbital_period", "day_length", "gravity", "sun_distance", "temperature", "atmosphere", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12) RETURNING "id"[0m  [["name", "Uranus"], ["solar_system_id", 1], ["diameter", 51118], ["mass", 0.11], ["orbital_period", 30589], ["day_length", 17], ["gravity", 8.7], ["sun_distance", 2872.5], ["temperature", -167], ["atmosphere", 0.0], ["created_at", "2019-05-02 14:47:02.024448"], ["updated_at", "2019-05-02 14:47:02.024448"]]
+  ↳ db/seeds.rb:17
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:17
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:18
+  [1m[36mSolarSystem Load (0.2ms)[0m  [1m[34mSELECT  "solar_systems".* FROM "solar_systems" WHERE "solar_systems"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:18
+  [1m[36mPlanet Create (0.4ms)[0m  [1m[32mINSERT INTO "planets" ("name", "solar_system_id", "diameter", "mass", "orbital_period", "day_length", "gravity", "sun_distance", "temperature", "atmosphere", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12) RETURNING "id"[0m  [["name", "Neptune"], ["solar_system_id", 1], ["diameter", 49528], ["mass", 17.24], ["orbital_period", 59800], ["day_length", 16], ["gravity", 11.0], ["sun_distance", 4495.1], ["temperature", -200], ["atmosphere", 0.0], ["created_at", "2019-05-02 14:47:02.029279"], ["updated_at", "2019-05-02 14:47:02.029279"]]
+  ↳ db/seeds.rb:18
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:18
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_try_advisory_lock(5381952802427419155)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to CreateMoons (20190502091023)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (2.5ms)[0m  [1m[35mDROP TABLE "moons"[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::SchemaMigration Destroy (1.0ms)[0m  [1m[31mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = $1[0m  [["version", "20190502091023"]]
+  ↳ bin/rails:9
+  [1m[35m (43.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT pg_advisory_unlock(5381952802427419155)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(5381952802427419155)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to CreateMoons (20190502091023)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (8.8ms)[0m  [1m[35mCREATE TABLE "moons" ("id" bigserial primary key, "name" character varying, "planet_id" integer, "distance" integer, "orbital_period" float, "diameter" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/migrate/20190502091023_create_moons.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20190502091023"]]
+  ↳ bin/rails:9
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Load (0.8ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(5381952802427419155)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(5381952802427419155)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to CreateMoons (20190502091023)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (3.1ms)[0m  [1m[35mDROP TABLE "moons"[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::SchemaMigration Destroy (0.6ms)[0m  [1m[31mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = $1[0m  [["version", "20190502091023"]]
+  ↳ bin/rails:9
+  [1m[35m (3.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+Migrating to CreatePlanets (20190502091005)
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (1.6ms)[0m  [1m[35mDROP TABLE "planets"[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::SchemaMigration Destroy (0.4ms)[0m  [1m[31mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = $1[0m  [["version", "20190502091005"]]
+  ↳ bin/rails:9
+  [1m[35m (51.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+Migrating to CreateSolarSystems (20190502090819)
+  [1m[35m (1.9ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (2.7ms)[0m  [1m[35mDROP TABLE "solar_systems"[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::SchemaMigration Destroy (0.5ms)[0m  [1m[31mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = $1[0m  [["version", "20190502090819"]]
+  ↳ bin/rails:9
+  [1m[35m (44.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(5381952802427419155)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(5381952802427419155)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to CreateSolarSystems (20190502090819)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (8.6ms)[0m  [1m[35mCREATE TABLE "solar_systems" ("id" bigserial primary key, "name" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/migrate/20190502090819_create_solar_systems.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20190502090819"]]
+  ↳ bin/rails:9
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+Migrating to CreatePlanets (20190502091005)
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (11.7ms)[0m  [1m[35mCREATE TABLE "planets" ("id" bigserial primary key, "name" character varying, "solar_system_id" integer, "diameter" integer, "mass" float, "orbital_period" integer, "day_length" integer, "gravity" float, "sun_distance" float, "temperature" integer, "atmosphere" float, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/migrate/20190502091005_create_planets.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20190502091005"]]
+  ↳ bin/rails:9
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+Migrating to CreateMoons (20190502091023)
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (8.9ms)[0m  [1m[35mCREATE TABLE "moons" ("id" bigserial primary key, "name" character varying, "planet_id" integer, "distance" integer, "orbital_period" float, "diameter" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/migrate/20190502091023_create_moons.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20190502091023"]]
+  ↳ bin/rails:9
+  [1m[35m (1.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Load (1.0ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(5381952802427419155)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:9
+  [1m[36mSolarSystem Create (1.0ms)[0m  [1m[32mINSERT INTO "solar_systems" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Milky Way"], ["created_at", "2019-05-02 14:48:20.976601"], ["updated_at", "2019-05-02 14:48:20.976601"]]
+  ↳ db/seeds.rb:9
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:11
+  [1m[36mSolarSystem Load (0.3ms)[0m  [1m[34mSELECT  "solar_systems".* FROM "solar_systems" WHERE "solar_systems"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:11
+  [1m[36mPlanet Create (1.0ms)[0m  [1m[32mINSERT INTO "planets" ("name", "solar_system_id", "diameter", "mass", "orbital_period", "day_length", "gravity", "sun_distance", "temperature", "atmosphere", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12) RETURNING "id"[0m  [["name", "Mercury"], ["solar_system_id", 1], ["diameter", 4878], ["mass", 0.06], ["orbital_period", 88], ["day_length", 4222], ["gravity", 3.7], ["sun_distance", 57.9], ["temperature", 167], ["atmosphere", 0.0], ["created_at", "2019-05-02 14:48:21.004390"], ["updated_at", "2019-05-02 14:48:21.004390"]]
+  ↳ db/seeds.rb:11
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:12
+  [1m[36mSolarSystem Load (0.3ms)[0m  [1m[34mSELECT  "solar_systems".* FROM "solar_systems" WHERE "solar_systems"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:12
+  [1m[36mPlanet Create (0.4ms)[0m  [1m[32mINSERT INTO "planets" ("name", "solar_system_id", "diameter", "mass", "orbital_period", "day_length", "gravity", "sun_distance", "temperature", "atmosphere", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12) RETURNING "id"[0m  [["name", "Venus"], ["solar_system_id", 1], ["diameter", 12104], ["mass", 0.82], ["orbital_period", 225], ["day_length", 2802], ["gravity", 8.9], ["sun_distance", 108.2], ["temperature", 464], ["atmosphere", 92.0], ["created_at", "2019-05-02 14:48:21.010056"], ["updated_at", "2019-05-02 14:48:21.010056"]]
+  ↳ db/seeds.rb:12
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:13
+  [1m[36mSolarSystem Load (0.3ms)[0m  [1m[34mSELECT  "solar_systems".* FROM "solar_systems" WHERE "solar_systems"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:13
+  [1m[36mPlanet Create (0.4ms)[0m  [1m[32mINSERT INTO "planets" ("name", "solar_system_id", "diameter", "mass", "orbital_period", "day_length", "gravity", "sun_distance", "temperature", "atmosphere", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12) RETURNING "id"[0m  [["name", "Earth"], ["solar_system_id", 1], ["diameter", 12756], ["mass", 1.0], ["orbital_period", 365], ["day_length", 24], ["gravity", 9.8], ["sun_distance", 149.6], ["temperature", -15], ["atmosphere", 1.0], ["created_at", "2019-05-02 14:48:21.014391"], ["updated_at", "2019-05-02 14:48:21.014391"]]
+  ↳ db/seeds.rb:13
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:14
+  [1m[36mSolarSystem Load (0.3ms)[0m  [1m[34mSELECT  "solar_systems".* FROM "solar_systems" WHERE "solar_systems"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:14
+  [1m[36mPlanet Create (0.4ms)[0m  [1m[32mINSERT INTO "planets" ("name", "solar_system_id", "diameter", "mass", "orbital_period", "day_length", "gravity", "sun_distance", "temperature", "atmosphere", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12) RETURNING "id"[0m  [["name", "Mars"], ["solar_system_id", 1], ["diameter", 6792], ["mass", 0.11], ["orbital_period", 687], ["day_length", 708], ["gravity", 3.7], ["sun_distance", 227.9], ["temperature", -65], ["atmosphere", 0.01], ["created_at", "2019-05-02 14:48:21.019036"], ["updated_at", "2019-05-02 14:48:21.019036"]]
+  ↳ db/seeds.rb:14
+  [1m[35m (1.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:14
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:15
+  [1m[36mSolarSystem Load (0.4ms)[0m  [1m[34mSELECT  "solar_systems".* FROM "solar_systems" WHERE "solar_systems"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:15
+  [1m[36mPlanet Create (0.4ms)[0m  [1m[32mINSERT INTO "planets" ("name", "solar_system_id", "diameter", "mass", "orbital_period", "day_length", "gravity", "sun_distance", "temperature", "atmosphere", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12) RETURNING "id"[0m  [["name", "Jupiter"], ["solar_system_id", 1], ["diameter", 142984], ["mass", 317.89], ["orbital_period", 4331], ["day_length", 9], ["gravity", 23.1], ["sun_distance", 778.6], ["temperature", -110], ["atmosphere", 0.0], ["created_at", "2019-05-02 14:48:21.024417"], ["updated_at", "2019-05-02 14:48:21.024417"]]
+  ↳ db/seeds.rb:15
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:15
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:16
+  [1m[36mSolarSystem Load (0.4ms)[0m  [1m[34mSELECT  "solar_systems".* FROM "solar_systems" WHERE "solar_systems"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:16
+  [1m[36mPlanet Create (0.5ms)[0m  [1m[32mINSERT INTO "planets" ("name", "solar_system_id", "diameter", "mass", "orbital_period", "day_length", "gravity", "sun_distance", "temperature", "atmosphere", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12) RETURNING "id"[0m  [["name", "Saturn"], ["solar_system_id", 1], ["diameter", 120536], ["mass", 95.17], ["orbital_period", 10747], ["day_length", 10], ["gravity", 9.8], ["sun_distance", 1433.5], ["temperature", -140], ["atmosphere", 0.0], ["created_at", "2019-05-02 14:48:21.029443"], ["updated_at", "2019-05-02 14:48:21.029443"]]
+  ↳ db/seeds.rb:16
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:16
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:17
+  [1m[36mSolarSystem Load (0.2ms)[0m  [1m[34mSELECT  "solar_systems".* FROM "solar_systems" WHERE "solar_systems"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:17
+  [1m[36mPlanet Create (0.4ms)[0m  [1m[32mINSERT INTO "planets" ("name", "solar_system_id", "diameter", "mass", "orbital_period", "day_length", "gravity", "sun_distance", "temperature", "atmosphere", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12) RETURNING "id"[0m  [["name", "Uranus"], ["solar_system_id", 1], ["diameter", 51118], ["mass", 0.11], ["orbital_period", 30589], ["day_length", 17], ["gravity", 8.7], ["sun_distance", 2872.5], ["temperature", -167], ["atmosphere", 0.0], ["created_at", "2019-05-02 14:48:21.033950"], ["updated_at", "2019-05-02 14:48:21.033950"]]
+  ↳ db/seeds.rb:17
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:17
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:18
+  [1m[36mSolarSystem Load (0.2ms)[0m  [1m[34mSELECT  "solar_systems".* FROM "solar_systems" WHERE "solar_systems"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:18
+  [1m[36mPlanet Create (0.5ms)[0m  [1m[32mINSERT INTO "planets" ("name", "solar_system_id", "diameter", "mass", "orbital_period", "day_length", "gravity", "sun_distance", "temperature", "atmosphere", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12) RETURNING "id"[0m  [["name", "Neptune"], ["solar_system_id", 1], ["diameter", 49528], ["mass", 17.24], ["orbital_period", 59800], ["day_length", 16], ["gravity", 11.0], ["sun_distance", 4495.1], ["temperature", -200], ["atmosphere", 0.0], ["created_at", "2019-05-02 14:48:21.038214"], ["updated_at", "2019-05-02 14:48:21.038214"]]
+  ↳ db/seeds.rb:18
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:18
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:20
+  [1m[36mPlanet Load (0.4ms)[0m  [1m[34mSELECT  "planets".* FROM "planets" WHERE "planets"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ db/seeds.rb:20
+  [1m[36mMoon Create (0.7ms)[0m  [1m[32mINSERT INTO "moons" ("name", "planet_id", "distance", "orbital_period", "diameter", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Moon"], ["planet_id", 3], ["distance", 384000], ["orbital_period", 27.322], ["diameter", 3476], ["created_at", "2019-05-02 14:48:21.057136"], ["updated_at", "2019-05-02 14:48:21.057136"]]
+  ↳ db/seeds.rb:20
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:20
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:22
+  [1m[36mPlanet Load (0.3ms)[0m  [1m[34mSELECT  "planets".* FROM "planets" WHERE "planets"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ db/seeds.rb:22
+  [1m[36mMoon Create (0.4ms)[0m  [1m[32mINSERT INTO "moons" ("name", "planet_id", "distance", "orbital_period", "diameter", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Phobos"], ["planet_id", 4], ["distance", 9380], ["orbital_period", 0.319], ["diameter", 23], ["created_at", "2019-05-02 14:48:21.062302"], ["updated_at", "2019-05-02 14:48:21.062302"]]
+  ↳ db/seeds.rb:22
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:22
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:23
+  [1m[36mPlanet Load (0.3ms)[0m  [1m[34mSELECT  "planets".* FROM "planets" WHERE "planets"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ db/seeds.rb:23
+  [1m[36mMoon Create (0.4ms)[0m  [1m[32mINSERT INTO "moons" ("name", "planet_id", "distance", "orbital_period", "diameter", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Deimos"], ["planet_id", 4], ["distance", 23460], ["orbital_period", 1.262], ["diameter", 13], ["created_at", "2019-05-02 14:48:21.066941"], ["updated_at", "2019-05-02 14:48:21.066941"]]
+  ↳ db/seeds.rb:23
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:23
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:25
+  [1m[36mPlanet Load (0.3ms)[0m  [1m[34mSELECT  "planets".* FROM "planets" WHERE "planets"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ db/seeds.rb:25
+  [1m[36mMoon Create (0.4ms)[0m  [1m[32mINSERT INTO "moons" ("name", "planet_id", "distance", "orbital_period", "diameter", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Metis"], ["planet_id", 5], ["distance", 127960], ["orbital_period", 0.295], ["diameter", 40], ["created_at", "2019-05-02 14:48:21.071510"], ["updated_at", "2019-05-02 14:48:21.071510"]]
+  ↳ db/seeds.rb:25
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:25
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:26
+  [1m[36mPlanet Load (0.3ms)[0m  [1m[34mSELECT  "planets".* FROM "planets" WHERE "planets"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ db/seeds.rb:26
+  [1m[36mMoon Create (0.4ms)[0m  [1m[32mINSERT INTO "moons" ("name", "planet_id", "distance", "orbital_period", "diameter", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Adrastea"], ["planet_id", 5], ["distance", 181300], ["orbital_period", 0.298], ["diameter", 20], ["created_at", "2019-05-02 14:48:21.076524"], ["updated_at", "2019-05-02 14:48:21.076524"]]
+  ↳ db/seeds.rb:26
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:26
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:27
+  [1m[36mPlanet Load (0.3ms)[0m  [1m[34mSELECT  "planets".* FROM "planets" WHERE "planets"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ db/seeds.rb:27
+  [1m[36mMoon Create (0.4ms)[0m  [1m[32mINSERT INTO "moons" ("name", "planet_id", "distance", "orbital_period", "diameter", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Amalthea"], ["planet_id", 5], ["distance", 221900], ["orbital_period", 0.498], ["diameter", 200], ["created_at", "2019-05-02 14:48:21.081228"], ["updated_at", "2019-05-02 14:48:21.081228"]]
+  ↳ db/seeds.rb:27
+  [1m[35m (1.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:27
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:28
+  [1m[36mPlanet Load (0.2ms)[0m  [1m[34mSELECT  "planets".* FROM "planets" WHERE "planets"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ db/seeds.rb:28
+  [1m[36mMoon Create (0.4ms)[0m  [1m[32mINSERT INTO "moons" ("name", "planet_id", "distance", "orbital_period", "diameter", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Thebe"], ["planet_id", 5], ["distance", 421600], ["orbital_period", 0.675], ["diameter", 100], ["created_at", "2019-05-02 14:48:21.086055"], ["updated_at", "2019-05-02 14:48:21.086055"]]
+  ↳ db/seeds.rb:28
+  [1m[35m (1.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:28
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:29
+  [1m[36mPlanet Load (0.3ms)[0m  [1m[34mSELECT  "planets".* FROM "planets" WHERE "planets"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ db/seeds.rb:29
+  [1m[36mMoon Create (0.4ms)[0m  [1m[32mINSERT INTO "moons" ("name", "planet_id", "distance", "orbital_period", "diameter", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Io"], ["planet_id", 5], ["distance", 670900], ["orbital_period", 1.769], ["diameter", 3652], ["created_at", "2019-05-02 14:48:21.091583"], ["updated_at", "2019-05-02 14:48:21.091583"]]
+  ↳ db/seeds.rb:29
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:29
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:30
+  [1m[36mPlanet Load (0.2ms)[0m  [1m[34mSELECT  "planets".* FROM "planets" WHERE "planets"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ db/seeds.rb:30
+  [1m[36mMoon Create (0.4ms)[0m  [1m[32mINSERT INTO "moons" ("name", "planet_id", "distance", "orbital_period", "diameter", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Europa"], ["planet_id", 5], ["distance", 1070000], ["orbital_period", 3.551], ["diameter", 3138], ["created_at", "2019-05-02 14:48:21.096123"], ["updated_at", "2019-05-02 14:48:21.096123"]]
+  ↳ db/seeds.rb:30
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:30
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:31
+  [1m[36mPlanet Load (0.2ms)[0m  [1m[34mSELECT  "planets".* FROM "planets" WHERE "planets"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ db/seeds.rb:31
+  [1m[36mMoon Create (0.4ms)[0m  [1m[32mINSERT INTO "moons" ("name", "planet_id", "distance", "orbital_period", "diameter", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Ganymede"], ["planet_id", 5], ["distance", 1880000], ["orbital_period", 7.155], ["diameter", 5262], ["created_at", "2019-05-02 14:48:21.100706"], ["updated_at", "2019-05-02 14:48:21.100706"]]
+  ↳ db/seeds.rb:31
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:31
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:32
+  [1m[36mPlanet Load (0.2ms)[0m  [1m[34mSELECT  "planets".* FROM "planets" WHERE "planets"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ db/seeds.rb:32
+  [1m[36mMoon Create (0.3ms)[0m  [1m[32mINSERT INTO "moons" ("name", "planet_id", "distance", "orbital_period", "diameter", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Callisto"], ["planet_id", 5], ["distance", 384000], ["orbital_period", 16.689], ["diameter", 4800], ["created_at", "2019-05-02 14:48:21.105564"], ["updated_at", "2019-05-02 14:48:21.105564"]]
+  ↳ db/seeds.rb:32
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:32
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:33
+  [1m[36mPlanet Load (0.2ms)[0m  [1m[34mSELECT  "planets".* FROM "planets" WHERE "planets"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ db/seeds.rb:33
+  [1m[36mMoon Create (0.4ms)[0m  [1m[32mINSERT INTO "moons" ("name", "planet_id", "distance", "orbital_period", "diameter", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Leda"], ["planet_id", 5], ["distance", 11094000], ["orbital_period", 238.7], ["diameter", 10], ["created_at", "2019-05-02 14:48:21.110194"], ["updated_at", "2019-05-02 14:48:21.110194"]]
+  ↳ db/seeds.rb:33
+  [1m[35m (2.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:33
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:34
+  [1m[36mPlanet Load (0.3ms)[0m  [1m[34mSELECT  "planets".* FROM "planets" WHERE "planets"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ db/seeds.rb:34
+  [1m[36mMoon Create (0.3ms)[0m  [1m[32mINSERT INTO "moons" ("name", "planet_id", "distance", "orbital_period", "diameter", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Himalia"], ["planet_id", 5], ["distance", 11480000], ["orbital_period", 250.6], ["diameter", 180], ["created_at", "2019-05-02 14:48:21.115950"], ["updated_at", "2019-05-02 14:48:21.115950"]]
+  ↳ db/seeds.rb:34
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:34
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:35
+  [1m[36mPlanet Load (0.2ms)[0m  [1m[34mSELECT  "planets".* FROM "planets" WHERE "planets"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ db/seeds.rb:35
+  [1m[36mMoon Create (0.4ms)[0m  [1m[32mINSERT INTO "moons" ("name", "planet_id", "distance", "orbital_period", "diameter", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Lysithia"], ["planet_id", 5], ["distance", 11720000], ["orbital_period", 259.2], ["diameter", 20], ["created_at", "2019-05-02 14:48:21.120437"], ["updated_at", "2019-05-02 14:48:21.120437"]]
+  ↳ db/seeds.rb:35
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:35
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:36
+  [1m[36mPlanet Load (0.2ms)[0m  [1m[34mSELECT  "planets".* FROM "planets" WHERE "planets"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ db/seeds.rb:36
+  [1m[36mMoon Create (0.4ms)[0m  [1m[32mINSERT INTO "moons" ("name", "planet_id", "distance", "orbital_period", "diameter", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Elara"], ["planet_id", 5], ["distance", 11737000], ["orbital_period", 259.7], ["diameter", 80], ["created_at", "2019-05-02 14:48:21.125107"], ["updated_at", "2019-05-02 14:48:21.125107"]]
+  ↳ db/seeds.rb:36
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:36
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:37
+  [1m[36mPlanet Load (0.2ms)[0m  [1m[34mSELECT  "planets".* FROM "planets" WHERE "planets"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ db/seeds.rb:37
+  [1m[36mMoon Create (0.4ms)[0m  [1m[32mINSERT INTO "moons" ("name", "planet_id", "distance", "orbital_period", "diameter", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Ananke"], ["planet_id", 5], ["distance", 21200000], ["orbital_period", 631.0], ["diameter", 20], ["created_at", "2019-05-02 14:48:21.129573"], ["updated_at", "2019-05-02 14:48:21.129573"]]
+  ↳ db/seeds.rb:37
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:37
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:38
+  [1m[36mPlanet Load (0.2ms)[0m  [1m[34mSELECT  "planets".* FROM "planets" WHERE "planets"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ db/seeds.rb:38
+  [1m[36mMoon Create (0.4ms)[0m  [1m[32mINSERT INTO "moons" ("name", "planet_id", "distance", "orbital_period", "diameter", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Carme"], ["planet_id", 5], ["distance", 22600000], ["orbital_period", 692.0], ["diameter", 30], ["created_at", "2019-05-02 14:48:21.133779"], ["updated_at", "2019-05-02 14:48:21.133779"]]
+  ↳ db/seeds.rb:38
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:38
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:39
+  [1m[36mPlanet Load (0.4ms)[0m  [1m[34mSELECT  "planets".* FROM "planets" WHERE "planets"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ db/seeds.rb:39
+  [1m[36mMoon Create (0.4ms)[0m  [1m[32mINSERT INTO "moons" ("name", "planet_id", "distance", "orbital_period", "diameter", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Pasiphae"], ["planet_id", 5], ["distance", 23500000], ["orbital_period", 735.0], ["diameter", 40], ["created_at", "2019-05-02 14:48:21.138674"], ["updated_at", "2019-05-02 14:48:21.138674"]]
+  ↳ db/seeds.rb:39
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:39
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:40
+  [1m[36mPlanet Load (0.2ms)[0m  [1m[34mSELECT  "planets".* FROM "planets" WHERE "planets"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ db/seeds.rb:40
+  [1m[36mMoon Create (0.4ms)[0m  [1m[32mINSERT INTO "moons" ("name", "planet_id", "distance", "orbital_period", "diameter", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Sinope"], ["planet_id", 5], ["distance", 23700000], ["orbital_period", 758.0], ["diameter", 30], ["created_at", "2019-05-02 14:48:21.143354"], ["updated_at", "2019-05-02 14:48:21.143354"]]
+  ↳ db/seeds.rb:40
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:40
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:42
+  [1m[36mPlanet Load (0.2ms)[0m  [1m[34mSELECT  "planets".* FROM "planets" WHERE "planets"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ db/seeds.rb:42
+  [1m[36mMoon Create (0.4ms)[0m  [1m[32mINSERT INTO "moons" ("name", "planet_id", "distance", "orbital_period", "diameter", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Atlas"], ["planet_id", 6], ["distance", 137670], ["orbital_period", 0.602], ["diameter", 32], ["created_at", "2019-05-02 14:48:21.147905"], ["updated_at", "2019-05-02 14:48:21.147905"]]
+  ↳ db/seeds.rb:42
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:42
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:43
+  [1m[36mPlanet Load (0.2ms)[0m  [1m[34mSELECT  "planets".* FROM "planets" WHERE "planets"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ db/seeds.rb:43
+  [1m[36mMoon Create (0.4ms)[0m  [1m[32mINSERT INTO "moons" ("name", "planet_id", "distance", "orbital_period", "diameter", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Prometheus"], ["planet_id", 6], ["distance", 139350], ["orbital_period", 0.613], ["diameter", 112], ["created_at", "2019-05-02 14:48:21.152366"], ["updated_at", "2019-05-02 14:48:21.152366"]]
+  ↳ db/seeds.rb:43
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:43
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:44
+  [1m[36mPlanet Load (0.2ms)[0m  [1m[34mSELECT  "planets".* FROM "planets" WHERE "planets"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ db/seeds.rb:44
+  [1m[36mMoon Create (0.4ms)[0m  [1m[32mINSERT INTO "moons" ("name", "planet_id", "distance", "orbital_period", "diameter", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Pandora"], ["planet_id", 6], ["distance", 141700], ["orbital_period", 0.629], ["diameter", 87], ["created_at", "2019-05-02 14:48:21.157139"], ["updated_at", "2019-05-02 14:48:21.157139"]]
+  ↳ db/seeds.rb:44
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:44
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:45
+  [1m[36mPlanet Load (0.2ms)[0m  [1m[34mSELECT  "planets".* FROM "planets" WHERE "planets"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ db/seeds.rb:45
+  [1m[36mMoon Create (0.4ms)[0m  [1m[32mINSERT INTO "moons" ("name", "planet_id", "distance", "orbital_period", "diameter", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Janus"], ["planet_id", 6], ["distance", 151470], ["orbital_period", 0.695], ["diameter", 190], ["created_at", "2019-05-02 14:48:21.161406"], ["updated_at", "2019-05-02 14:48:21.161406"]]
+  ↳ db/seeds.rb:45
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:45
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:46
+  [1m[36mPlanet Load (0.4ms)[0m  [1m[34mSELECT  "planets".* FROM "planets" WHERE "planets"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ db/seeds.rb:46
+  [1m[36mMoon Create (0.4ms)[0m  [1m[32mINSERT INTO "moons" ("name", "planet_id", "distance", "orbital_period", "diameter", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Epimetheus"], ["planet_id", 6], ["distance", 151420], ["orbital_period", 0.694], ["diameter", 118], ["created_at", "2019-05-02 14:48:21.166405"], ["updated_at", "2019-05-02 14:48:21.166405"]]
+  ↳ db/seeds.rb:46
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:46
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:47
+  [1m[36mPlanet Load (0.2ms)[0m  [1m[34mSELECT  "planets".* FROM "planets" WHERE "planets"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ db/seeds.rb:47
+  [1m[36mMoon Create (0.4ms)[0m  [1m[32mINSERT INTO "moons" ("name", "planet_id", "distance", "orbital_period", "diameter", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Mimus"], ["planet_id", 6], ["distance", 185540], ["orbital_period", 0.942], ["diameter", 392], ["created_at", "2019-05-02 14:48:21.170755"], ["updated_at", "2019-05-02 14:48:21.170755"]]
+  ↳ db/seeds.rb:47
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:47
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:48
+  [1m[36mPlanet Load (0.2ms)[0m  [1m[34mSELECT  "planets".* FROM "planets" WHERE "planets"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ db/seeds.rb:48
+  [1m[36mMoon Create (0.4ms)[0m  [1m[32mINSERT INTO "moons" ("name", "planet_id", "distance", "orbital_period", "diameter", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Enceladus"], ["planet_id", 6], ["distance", 238040], ["orbital_period", 1.37], ["diameter", 500], ["created_at", "2019-05-02 14:48:21.175417"], ["updated_at", "2019-05-02 14:48:21.175417"]]
+  ↳ db/seeds.rb:48
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:48
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:49
+  [1m[36mPlanet Load (0.2ms)[0m  [1m[34mSELECT  "planets".* FROM "planets" WHERE "planets"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ db/seeds.rb:49
+  [1m[36mMoon Create (0.4ms)[0m  [1m[32mINSERT INTO "moons" ("name", "planet_id", "distance", "orbital_period", "diameter", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Tethys"], ["planet_id", 6], ["distance", 294670], ["orbital_period", 1.888], ["diameter", 1060], ["created_at", "2019-05-02 14:48:21.179956"], ["updated_at", "2019-05-02 14:48:21.179956"]]
+  ↳ db/seeds.rb:49
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:49
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:50
+  [1m[36mPlanet Load (0.2ms)[0m  [1m[34mSELECT  "planets".* FROM "planets" WHERE "planets"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ db/seeds.rb:50
+  [1m[36mMoon Create (0.4ms)[0m  [1m[32mINSERT INTO "moons" ("name", "planet_id", "distance", "orbital_period", "diameter", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Telesto"], ["planet_id", 6], ["distance", 294670], ["orbital_period", 1.888], ["diameter", 23], ["created_at", "2019-05-02 14:48:21.184463"], ["updated_at", "2019-05-02 14:48:21.184463"]]
+  ↳ db/seeds.rb:50
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:50
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:51
+  [1m[36mPlanet Load (0.2ms)[0m  [1m[34mSELECT  "planets".* FROM "planets" WHERE "planets"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ db/seeds.rb:51
+  [1m[36mMoon Create (0.4ms)[0m  [1m[32mINSERT INTO "moons" ("name", "planet_id", "distance", "orbital_period", "diameter", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Calypso"], ["planet_id", 6], ["distance", 377420], ["orbital_period", 1.888], ["diameter", 23], ["created_at", "2019-05-02 14:48:21.189194"], ["updated_at", "2019-05-02 14:48:21.189194"]]
+  ↳ db/seeds.rb:51
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:51
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:52
+  [1m[36mPlanet Load (0.2ms)[0m  [1m[34mSELECT  "planets".* FROM "planets" WHERE "planets"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ db/seeds.rb:52
+  [1m[36mMoon Create (0.4ms)[0m  [1m[32mINSERT INTO "moons" ("name", "planet_id", "distance", "orbital_period", "diameter", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Dione"], ["planet_id", 6], ["distance", 377420], ["orbital_period", 2.737], ["diameter", 1120], ["created_at", "2019-05-02 14:48:21.193805"], ["updated_at", "2019-05-02 14:48:21.193805"]]
+  ↳ db/seeds.rb:52
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:52
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:53
+  [1m[36mPlanet Load (0.2ms)[0m  [1m[34mSELECT  "planets".* FROM "planets" WHERE "planets"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ db/seeds.rb:53
+  [1m[36mMoon Create (0.4ms)[0m  [1m[32mINSERT INTO "moons" ("name", "planet_id", "distance", "orbital_period", "diameter", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Helene"], ["planet_id", 6], ["distance", 377420], ["orbital_period", 2.737], ["diameter", 36], ["created_at", "2019-05-02 14:48:21.198096"], ["updated_at", "2019-05-02 14:48:21.198096"]]
+  ↳ db/seeds.rb:53
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:53
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:54
+  [1m[36mPlanet Load (0.2ms)[0m  [1m[34mSELECT  "planets".* FROM "planets" WHERE "planets"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ db/seeds.rb:54
+  [1m[36mMoon Create (0.4ms)[0m  [1m[32mINSERT INTO "moons" ("name", "planet_id", "distance", "orbital_period", "diameter", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Rhea"], ["planet_id", 6], ["distance", 527040], ["orbital_period", 4.518], ["diameter", 1530], ["created_at", "2019-05-02 14:48:21.202436"], ["updated_at", "2019-05-02 14:48:21.202436"]]
+  ↳ db/seeds.rb:54
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:54
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:55
+  [1m[36mPlanet Load (0.2ms)[0m  [1m[34mSELECT  "planets".* FROM "planets" WHERE "planets"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ db/seeds.rb:55
+  [1m[36mMoon Create (0.4ms)[0m  [1m[32mINSERT INTO "moons" ("name", "planet_id", "distance", "orbital_period", "diameter", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Titan"], ["planet_id", 6], ["distance", 1221860], ["orbital_period", 15.495], ["diameter", 5150], ["created_at", "2019-05-02 14:48:21.207145"], ["updated_at", "2019-05-02 14:48:21.207145"]]
+  ↳ db/seeds.rb:55
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:55
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:56
+  [1m[36mPlanet Load (0.2ms)[0m  [1m[34mSELECT  "planets".* FROM "planets" WHERE "planets"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ db/seeds.rb:56
+  [1m[36mMoon Create (0.3ms)[0m  [1m[32mINSERT INTO "moons" ("name", "planet_id", "distance", "orbital_period", "diameter", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Hyperion"], ["planet_id", 6], ["distance", 1481100], ["orbital_period", 21.277], ["diameter", 261], ["created_at", "2019-05-02 14:48:21.211617"], ["updated_at", "2019-05-02 14:48:21.211617"]]
+  ↳ db/seeds.rb:56
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:56
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:57
+  [1m[36mPlanet Load (0.2ms)[0m  [1m[34mSELECT  "planets".* FROM "planets" WHERE "planets"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ db/seeds.rb:57
+  [1m[36mMoon Create (0.3ms)[0m  [1m[32mINSERT INTO "moons" ("name", "planet_id", "distance", "orbital_period", "diameter", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Iapetus"], ["planet_id", 6], ["distance", 3561300], ["orbital_period", 79.331], ["diameter", 1460], ["created_at", "2019-05-02 14:48:21.220078"], ["updated_at", "2019-05-02 14:48:21.220078"]]
+  ↳ db/seeds.rb:57
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:57
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:58
+  [1m[36mPlanet Load (0.2ms)[0m  [1m[34mSELECT  "planets".* FROM "planets" WHERE "planets"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ db/seeds.rb:58
+  [1m[36mMoon Create (0.4ms)[0m  [1m[32mINSERT INTO "moons" ("name", "planet_id", "distance", "orbital_period", "diameter", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Pheobe"], ["planet_id", 6], ["distance", 12954000], ["orbital_period", 550.4], ["diameter", 220], ["created_at", "2019-05-02 14:48:21.224016"], ["updated_at", "2019-05-02 14:48:21.224016"]]
+  ↳ db/seeds.rb:58
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:58
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:60
+  [1m[36mPlanet Load (0.2ms)[0m  [1m[34mSELECT  "planets".* FROM "planets" WHERE "planets"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ db/seeds.rb:60
+  [1m[36mMoon Create (0.4ms)[0m  [1m[32mINSERT INTO "moons" ("name", "planet_id", "distance", "orbital_period", "diameter", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Cordelia"], ["planet_id", 7], ["distance", 49800], ["orbital_period", 0.355], ["diameter", 15], ["created_at", "2019-05-02 14:48:21.228371"], ["updated_at", "2019-05-02 14:48:21.228371"]]
+  ↳ db/seeds.rb:60
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:60
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:61
+  [1m[36mPlanet Load (0.3ms)[0m  [1m[34mSELECT  "planets".* FROM "planets" WHERE "planets"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ db/seeds.rb:61
+  [1m[36mMoon Create (0.5ms)[0m  [1m[32mINSERT INTO "moons" ("name", "planet_id", "distance", "orbital_period", "diameter", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Ophelia"], ["planet_id", 7], ["distance", 53800], ["orbital_period", 0.376], ["diameter", 20], ["created_at", "2019-05-02 14:48:21.233247"], ["updated_at", "2019-05-02 14:48:21.233247"]]
+  ↳ db/seeds.rb:61
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:61
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:62
+  [1m[36mPlanet Load (0.4ms)[0m  [1m[34mSELECT  "planets".* FROM "planets" WHERE "planets"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ db/seeds.rb:62
+  [1m[36mMoon Create (0.4ms)[0m  [1m[32mINSERT INTO "moons" ("name", "planet_id", "distance", "orbital_period", "diameter", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Bianca"], ["planet_id", 7], ["distance", 59100], ["orbital_period", 0.433], ["diameter", 50], ["created_at", "2019-05-02 14:48:21.238934"], ["updated_at", "2019-05-02 14:48:21.238934"]]
+  ↳ db/seeds.rb:62
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:62
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:63
+  [1m[36mPlanet Load (0.3ms)[0m  [1m[34mSELECT  "planets".* FROM "planets" WHERE "planets"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ db/seeds.rb:63
+  [1m[36mMoon Create (0.3ms)[0m  [1m[32mINSERT INTO "moons" ("name", "planet_id", "distance", "orbital_period", "diameter", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Cressida"], ["planet_id", 7], ["distance", 61750], ["orbital_period", 0.463], ["diameter", 70], ["created_at", "2019-05-02 14:48:21.243751"], ["updated_at", "2019-05-02 14:48:21.243751"]]
+  ↳ db/seeds.rb:63
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:63
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:64
+  [1m[36mPlanet Load (0.2ms)[0m  [1m[34mSELECT  "planets".* FROM "planets" WHERE "planets"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ db/seeds.rb:64
+  [1m[36mMoon Create (0.4ms)[0m  [1m[32mINSERT INTO "moons" ("name", "planet_id", "distance", "orbital_period", "diameter", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Desdemona"], ["planet_id", 7], ["distance", 62700], ["orbital_period", 0.475], ["diameter", 50], ["created_at", "2019-05-02 14:48:21.248006"], ["updated_at", "2019-05-02 14:48:21.248006"]]
+  ↳ db/seeds.rb:64
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:64
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:65
+  [1m[36mPlanet Load (0.2ms)[0m  [1m[34mSELECT  "planets".* FROM "planets" WHERE "planets"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ db/seeds.rb:65
+  [1m[36mMoon Create (0.4ms)[0m  [1m[32mINSERT INTO "moons" ("name", "planet_id", "distance", "orbital_period", "diameter", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Juliet"], ["planet_id", 7], ["distance", 64350], ["orbital_period", 0.493], ["diameter", 70], ["created_at", "2019-05-02 14:48:21.252365"], ["updated_at", "2019-05-02 14:48:21.252365"]]
+  ↳ db/seeds.rb:65
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:65
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:66
+  [1m[36mPlanet Load (0.3ms)[0m  [1m[34mSELECT  "planets".* FROM "planets" WHERE "planets"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ db/seeds.rb:66
+  [1m[36mMoon Create (0.4ms)[0m  [1m[32mINSERT INTO "moons" ("name", "planet_id", "distance", "orbital_period", "diameter", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Portia"], ["planet_id", 7], ["distance", 66090], ["orbital_period", 0.513], ["diameter", 90], ["created_at", "2019-05-02 14:48:21.257628"], ["updated_at", "2019-05-02 14:48:21.257628"]]
+  ↳ db/seeds.rb:66
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:66
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:67
+  [1m[36mPlanet Load (0.2ms)[0m  [1m[34mSELECT  "planets".* FROM "planets" WHERE "planets"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ db/seeds.rb:67
+  [1m[36mMoon Create (0.4ms)[0m  [1m[32mINSERT INTO "moons" ("name", "planet_id", "distance", "orbital_period", "diameter", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Rosalind"], ["planet_id", 7], ["distance", 69920], ["orbital_period", 0.558], ["diameter", 50], ["created_at", "2019-05-02 14:48:21.262427"], ["updated_at", "2019-05-02 14:48:21.262427"]]
+  ↳ db/seeds.rb:67
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:67
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:68
+  [1m[36mPlanet Load (0.2ms)[0m  [1m[34mSELECT  "planets".* FROM "planets" WHERE "planets"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ db/seeds.rb:68
+  [1m[36mMoon Create (0.3ms)[0m  [1m[32mINSERT INTO "moons" ("name", "planet_id", "distance", "orbital_period", "diameter", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Belinda"], ["planet_id", 7], ["distance", 75300], ["orbital_period", 0.622], ["diameter", 50], ["created_at", "2019-05-02 14:48:21.266184"], ["updated_at", "2019-05-02 14:48:21.266184"]]
+  ↳ db/seeds.rb:68
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:68
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:69
+  [1m[36mPlanet Load (0.2ms)[0m  [1m[34mSELECT  "planets".* FROM "planets" WHERE "planets"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ db/seeds.rb:69
+  [1m[36mMoon Create (0.5ms)[0m  [1m[32mINSERT INTO "moons" ("name", "planet_id", "distance", "orbital_period", "diameter", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Puck"], ["planet_id", 7], ["distance", 86010], ["orbital_period", 0.762], ["diameter", 170], ["created_at", "2019-05-02 14:48:21.270481"], ["updated_at", "2019-05-02 14:48:21.270481"]]
+  ↳ db/seeds.rb:69
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:69
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:70
+  [1m[36mPlanet Load (0.2ms)[0m  [1m[34mSELECT  "planets".* FROM "planets" WHERE "planets"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ db/seeds.rb:70
+  [1m[36mMoon Create (0.4ms)[0m  [1m[32mINSERT INTO "moons" ("name", "planet_id", "distance", "orbital_period", "diameter", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Miranda"], ["planet_id", 7], ["distance", 129400], ["orbital_period", 1.414], ["diameter", 480], ["created_at", "2019-05-02 14:48:21.275318"], ["updated_at", "2019-05-02 14:48:21.275318"]]
+  ↳ db/seeds.rb:70
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:70
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:71
+  [1m[36mPlanet Load (0.2ms)[0m  [1m[34mSELECT  "planets".* FROM "planets" WHERE "planets"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ db/seeds.rb:71
+  [1m[36mMoon Create (0.4ms)[0m  [1m[32mINSERT INTO "moons" ("name", "planet_id", "distance", "orbital_period", "diameter", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Ariel"], ["planet_id", 7], ["distance", 191000], ["orbital_period", 2.52], ["diameter", 1170], ["created_at", "2019-05-02 14:48:21.279714"], ["updated_at", "2019-05-02 14:48:21.279714"]]
+  ↳ db/seeds.rb:71
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:71
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:72
+  [1m[36mPlanet Load (0.3ms)[0m  [1m[34mSELECT  "planets".* FROM "planets" WHERE "planets"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ db/seeds.rb:72
+  [1m[36mMoon Create (0.4ms)[0m  [1m[32mINSERT INTO "moons" ("name", "planet_id", "distance", "orbital_period", "diameter", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Umbriel"], ["planet_id", 7], ["distance", 266300], ["orbital_period", 4.144], ["diameter", 1190], ["created_at", "2019-05-02 14:48:21.284586"], ["updated_at", "2019-05-02 14:48:21.284586"]]
+  ↳ db/seeds.rb:72
+  [1m[35m (1.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:72
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:73
+  [1m[36mPlanet Load (0.6ms)[0m  [1m[34mSELECT  "planets".* FROM "planets" WHERE "planets"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ db/seeds.rb:73
+  [1m[36mMoon Create (0.5ms)[0m  [1m[32mINSERT INTO "moons" ("name", "planet_id", "distance", "orbital_period", "diameter", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Titania"], ["planet_id", 7], ["distance", 435900], ["orbital_period", 8.706], ["diameter", 1560], ["created_at", "2019-05-02 14:48:21.289768"], ["updated_at", "2019-05-02 14:48:21.289768"]]
+  ↳ db/seeds.rb:73
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:73
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:74
+  [1m[36mPlanet Load (0.2ms)[0m  [1m[34mSELECT  "planets".* FROM "planets" WHERE "planets"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ db/seeds.rb:74
+  [1m[36mMoon Create (0.4ms)[0m  [1m[32mINSERT INTO "moons" ("name", "planet_id", "distance", "orbital_period", "diameter", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Oberon"], ["planet_id", 7], ["distance", 583500], ["orbital_period", 13.463], ["diameter", 1550], ["created_at", "2019-05-02 14:48:21.294372"], ["updated_at", "2019-05-02 14:48:21.294372"]]
+  ↳ db/seeds.rb:74
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:74
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:76
+  [1m[36mPlanet Load (0.2ms)[0m  [1m[34mSELECT  "planets".* FROM "planets" WHERE "planets"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ db/seeds.rb:76
+  [1m[36mMoon Create (0.4ms)[0m  [1m[32mINSERT INTO "moons" ("name", "planet_id", "distance", "orbital_period", "diameter", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Naiad"], ["planet_id", 8], ["distance", 48200], ["orbital_period", 0.3], ["diameter", 50], ["created_at", "2019-05-02 14:48:21.298690"], ["updated_at", "2019-05-02 14:48:21.298690"]]
+  ↳ db/seeds.rb:76
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:76
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:77
+  [1m[36mPlanet Load (0.2ms)[0m  [1m[34mSELECT  "planets".* FROM "planets" WHERE "planets"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ db/seeds.rb:77
+  [1m[36mMoon Create (0.4ms)[0m  [1m[32mINSERT INTO "moons" ("name", "planet_id", "distance", "orbital_period", "diameter", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Thalassa"], ["planet_id", 8], ["distance", 50000], ["orbital_period", 0.31], ["diameter", 90], ["created_at", "2019-05-02 14:48:21.303059"], ["updated_at", "2019-05-02 14:48:21.303059"]]
+  ↳ db/seeds.rb:77
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:77
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:78
+  [1m[36mPlanet Load (0.3ms)[0m  [1m[34mSELECT  "planets".* FROM "planets" WHERE "planets"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ db/seeds.rb:78
+  [1m[36mMoon Create (0.4ms)[0m  [1m[32mINSERT INTO "moons" ("name", "planet_id", "distance", "orbital_period", "diameter", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Despina"], ["planet_id", 8], ["distance", 52500], ["orbital_period", 0.33], ["diameter", 140], ["created_at", "2019-05-02 14:48:21.308007"], ["updated_at", "2019-05-02 14:48:21.308007"]]
+  ↳ db/seeds.rb:78
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:78
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:79
+  [1m[36mPlanet Load (0.2ms)[0m  [1m[34mSELECT  "planets".* FROM "planets" WHERE "planets"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ db/seeds.rb:79
+  [1m[36mMoon Create (0.4ms)[0m  [1m[32mINSERT INTO "moons" ("name", "planet_id", "distance", "orbital_period", "diameter", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Galatea"], ["planet_id", 8], ["distance", 62000], ["orbital_period", 0.43], ["diameter", 160], ["created_at", "2019-05-02 14:48:21.312259"], ["updated_at", "2019-05-02 14:48:21.312259"]]
+  ↳ db/seeds.rb:79
+  [1m[35m (1.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:79
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:80
+  [1m[36mPlanet Load (0.3ms)[0m  [1m[34mSELECT  "planets".* FROM "planets" WHERE "planets"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ db/seeds.rb:80
+  [1m[36mMoon Create (0.4ms)[0m  [1m[32mINSERT INTO "moons" ("name", "planet_id", "distance", "orbital_period", "diameter", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Larissa"], ["planet_id", 8], ["distance", 73600], ["orbital_period", 0.55], ["diameter", 200], ["created_at", "2019-05-02 14:48:21.317380"], ["updated_at", "2019-05-02 14:48:21.317380"]]
+  ↳ db/seeds.rb:80
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:80
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:81
+  [1m[36mPlanet Load (0.4ms)[0m  [1m[34mSELECT  "planets".* FROM "planets" WHERE "planets"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ db/seeds.rb:81
+  [1m[36mMoon Create (0.4ms)[0m  [1m[32mINSERT INTO "moons" ("name", "planet_id", "distance", "orbital_period", "diameter", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Proteus"], ["planet_id", 8], ["distance", 117600], ["orbital_period", 1.12], ["diameter", 420], ["created_at", "2019-05-02 14:48:21.322226"], ["updated_at", "2019-05-02 14:48:21.322226"]]
+  ↳ db/seeds.rb:81
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:81
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:82
+  [1m[36mPlanet Load (0.2ms)[0m  [1m[34mSELECT  "planets".* FROM "planets" WHERE "planets"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ db/seeds.rb:82
+  [1m[36mMoon Create (0.4ms)[0m  [1m[32mINSERT INTO "moons" ("name", "planet_id", "distance", "orbital_period", "diameter", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Triton"], ["planet_id", 8], ["distance", 354800], ["orbital_period", 5.877], ["diameter", 3500], ["created_at", "2019-05-02 14:48:21.326702"], ["updated_at", "2019-05-02 14:48:21.326702"]]
+  ↳ db/seeds.rb:82
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:82
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:83
+  [1m[36mPlanet Load (0.3ms)[0m  [1m[34mSELECT  "planets".* FROM "planets" WHERE "planets"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ db/seeds.rb:83
+  [1m[36mMoon Create (0.4ms)[0m  [1m[32mINSERT INTO "moons" ("name", "planet_id", "distance", "orbital_period", "diameter", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Nereid"], ["planet_id", 8], ["distance", 5510000], ["orbital_period", 360.21], ["diameter", 400], ["created_at", "2019-05-02 14:48:21.331571"], ["updated_at", "2019-05-02 14:48:21.331571"]]
+  ↳ db/seeds.rb:83
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:83

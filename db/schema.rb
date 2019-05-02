@@ -18,6 +18,9 @@ ActiveRecord::Schema.define(version: 2019_05_02_091023) do
   create_table "moons", force: :cascade do |t|
     t.string "name"
     t.integer "planet_id"
+    t.integer "distance"
+    t.float "orbital_period"
+    t.integer "diameter"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
