@@ -1,6 +1,6 @@
 class PlanetsController < ApplicationController
   def index
-    @plaets = Planet.all
+    @planets = Planet.all
     render json: @planets
   end
 end
