@@ -1,4 +1,4 @@
 class Planet < ApplicationRecord
   belongs_to :solar_system
-  has_many :planets
+  has_many :moons
 end

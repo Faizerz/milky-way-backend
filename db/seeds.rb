@@ -32,7 +32,7 @@ Moon.create(name:'Ganymede', planet_id: jupiter.id, distance: 1880000, orbital_p
 Moon.create(name:'Callisto', planet_id: jupiter.id, distance: 384000, orbital_period: 16.689, diameter: 4800)
 Moon.create(name:'Leda', planet_id: jupiter.id, distance: 11094000, orbital_period: 238.7, diameter: 10)
 Moon.create(name:'Himalia', planet_id: jupiter.id, distance: 11480000, orbital_period: 250.6, diameter: 180)
-Moon.create(name:'Lysithia', planet_id: jupiter.id, distance: 11720000, orbital_period: 259.2, diameter: 20)
+Moon.create(name:'Lysithea', planet_id: jupiter.id, distance: 11720000, orbital_period: 259.2, diameter: 20)
 Moon.create(name:'Elara', planet_id: jupiter.id, distance: 11737000, orbital_period: 259.7, diameter: 80)
 Moon.create(name:'Ananke', planet_id: jupiter.id, distance: 21200000, orbital_period: 631, diameter: 20)
 Moon.create(name:'Carme', planet_id: jupiter.id, distance: 22600000, orbital_period: 692, diameter: 30)
