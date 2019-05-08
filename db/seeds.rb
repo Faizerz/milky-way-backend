@@ -23,7 +23,7 @@ Moon.create(name:'Phobos', planet_id: mars.id, distance: 9380, orbital_period: 0
 Moon.create(name:'Deimos', planet_id: mars.id, distance: 23460, orbital_period: 1.262, diameter: 13)
 
 Moon.create(name:'Metis', planet_id: jupiter.id, distance: 127960, orbital_period: 0.295, diameter: 40)
-Moon.create(name:'Adrastea', planet_id: jupiter.id, distance: 181300, orbital_period: 0.298, diameter: 20)
+Moon.create(name:'Adrastrea', planet_id: jupiter.id, distance: 181300, orbital_period: 0.298, diameter: 20)
 Moon.create(name:'Amalthea', planet_id: jupiter.id, distance: 221900, orbital_period: 0.498, diameter: 200)
 Moon.create(name:'Thebe', planet_id: jupiter.id, distance: 421600, orbital_period: 0.675, diameter: 100)
 Moon.create(name:'Io', planet_id: jupiter.id, distance: 670900, orbital_period: 1.769, diameter: 3652)
@@ -43,8 +43,8 @@ Moon.create(name:'Atlas', planet_id: saturn.id, distance: 137670, orbital_period
 Moon.create(name:'Prometheus', planet_id: saturn.id, distance: 139350, orbital_period: 0.613, diameter: 112)
 Moon.create(name:'Pandora', planet_id: saturn.id, distance: 141700, orbital_period: 0.629, diameter: 87)
 Moon.create(name:'Janus', planet_id: saturn.id, distance: 151470, orbital_period: 0.695, diameter: 190)
-Moon.create(name:'Epimetheus', planet_id: saturn.id, distance: 151420, orbital_period: 0.694, diameter: 118)
-Moon.create(name:'Mimus', planet_id: saturn.id, distance: 185540, orbital_period: 0.942, diameter: 392)
+Moon.create(name:'Epithemeus', planet_id: saturn.id, distance: 151420, orbital_period: 0.694, diameter: 118)
+Moon.create(name:'Mimas', planet_id: saturn.id, distance: 185540, orbital_period: 0.942, diameter: 392)
 Moon.create(name:'Enceladus', planet_id: saturn.id, distance: 238040, orbital_period: 1.370, diameter: 500)
 Moon.create(name:'Tethys', planet_id: saturn.id, distance: 294670, orbital_period: 1.888, diameter: 1060)
 Moon.create(name:'Telesto', planet_id: saturn.id, distance: 294670, orbital_period: 1.888, diameter: 23)
@@ -55,7 +55,7 @@ Moon.create(name:'Rhea', planet_id: saturn.id, distance: 527040, orbital_period:
 Moon.create(name:'Titan', planet_id: saturn.id, distance: 1221860, orbital_period: 15.495, diameter: 5150)
 Moon.create(name:'Hyperion', planet_id: saturn.id, distance: 1481100, orbital_period: 21.277, diameter: 261)
 Moon.create(name:'Iapetus', planet_id: saturn.id, distance: 3561300, orbital_period: 79.331, diameter: 1460)
-Moon.create(name:'Pheobe', planet_id: saturn.id, distance: 12954000, orbital_period: 550.4, diameter: 220)
+Moon.create(name:'Phoebe', planet_id: saturn.id, distance: 12954000, orbital_period: 550.4, diameter: 220)
 
 Moon.create(name:'Cordelia', planet_id: uranus.id, distance: 49800, orbital_period: 0.355, diameter: 15)
 Moon.create(name:'Ophelia', planet_id: uranus.id, distance: 53800, orbital_period: 0.376, diameter: 20)
